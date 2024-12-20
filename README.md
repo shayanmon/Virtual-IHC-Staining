@@ -1,7 +1,7 @@
 Conditional Generative Adversarial Network (cGAN) tuned from the pix2pix model (https://github.com/phillipi/pix2pix) for translating H&E images to cytokeratin AE1/AE3 IHC images. This is useful for identifying epithelial regions within the tumor region and can be used to verify the validity of a binary segmentation model of epithelial and stromal regions.
 
-Model: pix2pixHD (https://github.com/NVIDIA/pix2pixHD)
-Weights: There are different weights depending on the epoch you want. Use epoch 45 for best results for this particular disease. NOTE: A different weight might work better depending on the context of the problem. 
+Model: pix2pixHD (https://github.com/NVIDIA/pix2pixHD) <br>
+Weights: There are different weights depending on the epoch you want. Use epoch 45 for best results for this particular disease. NOTE: A different weight might work better depending on the context of the problem. <br>
 Run inference: Use train_test.py file in the folder, the line code: python train_test.py --dataroot /…/pix2pixHD/datasets/HE2IHC_data --name HE2IHC --which_epoch 45 --batchSize 16 --how_many 1900 --gpu_ids 0,1 --label_nc 0 --no_instance --resize_or_crop none --results_dir '…/ My Book /Outputfolder’
 
 Explanation: The model name is "HE2IHC". Create a folder with the INFERENCE dataset at /pix2pixHD/datasets/HE2IHC_data/test_A. Also, create a checkpoint folder at /pix2pixHD/checkpoints/HE2IHC/ and place the epoch file there.
